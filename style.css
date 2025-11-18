@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #f0f0f0;
+  font-family: "Arial", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  overflow-y: auto;
+  min-height: 100vh;
+}
+
+.calculator {
+  background-color: #333;
+  border-radius: px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 350px;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#display {
+  width: 100%;
+  height: 50px;
+  font-size: 24px;
+  text-align: right;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: #eee;
+  color: #333;
+  outline: none;
+  user-select: text;
+  overflow-x: auto;
+}
+
+.button {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  height: 60px;
+  font-size: 22px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+  transform: scale(1.08);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn:not(.operator):not([onclick*="calculate"]):not([onclick*="clearDisplay"]) {
+  background-color: #666;
+}
+
+.btn:not(.operator):not([onclick*="calculate"]):not(
+    [onclick*="clearDisplay"]
+  ):hover {
+  background-color: #777;
+}
+
+.operator {
+  background-color: #ff9500;
+}
+
+.operator:hover {
+  background-color: #e6890a;
+}
+
+.btn[onclick*="calculate"] {
+  background-color: #28a745;
+  grid-column: span 2;
+}
+
+.btn[onclick*="calculate"]:hover {
+  background-color: #218838;
+}
+
+.btn[onclick*="clearDisplay"] {
+  background-color: #dc3545;
+  grid-column: span 2;
+}
+
+.btn[onclick*="clearDisplay"]:hover {
+  background-color: #c82333;
+}
+
+@media (max-width: 400px) {
+  .calculator {
+    width: 280px;
+  }
+
+  .btn {
+    height: 50px;
+    font-size: 20px;
+  }
+
+  #display {
+    height: 45px;
+    font-size: 20px;
+    padding: 8px;
+  }
+}
