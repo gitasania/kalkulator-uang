@@ -3,46 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator Uang</title>
+    <title>Kalkulator Pecahan Uang</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="calculator">
-        <input type="text" id="display" disabled>
-        <div class="button"> 
-            <button class="btn" onclick="appendValue('7')">7</button>
-            <button class="btn" onclick="appendValue('8')">8</button>
-            <button class="btn" onclick="appendValue('9')">9</button>
-            <button class="btn operator" onclick="appendValue('/')">/</button>
-            <button class="btn" onclick="appendValue('4')">4</button>
-            <button class="btn" onclick="appendValue('5')">5</button>
-            <button class="btn" onclick="appendValue('6')">6</button>
-            <button class="btn operator" onclick="appendValue('*')">X</button>
-            <button class="btn" onclick="appendValue('1')">1</button>
-            <button class="btn" onclick="appendValue('2')">2</button>
-            <button class="btn" onclick="appendValue('3')">3</button>
-            <button class="btn operator" onclick="appendValue('-')">-</button>
-            <button class="btn" onclick="appendValue('0')">0</button>
-            <button class="btn" onclick="appendValue('.')">.</button>
-            <button class="btn" onclick="calculate()">=</button>
-            <button class="btn" onclick="appendValue('+')">+</button>
-            <button class="btn" onclick="clearDisplay()">Reset</button>
+    <div class="wrapper">
+        <div class="calculator">
+            <input type="text" id="display" disabled value="0">
+
+            <div class="buttons">
+                <button class="btn" onclick="appendValue('7')">7</button>
+                <button class="btn" onclick="appendValue('8')">8</button>
+                <button class="btn" onclick="appendValue('9')">9</button>
+
+                <button class="btn" onclick="appendValue('4')">4</button>
+                <button class="btn" onclick="appendValue('5')">5</button>
+                <button class="btn" onclick="appendValue('6')">6</button>
+
+                <button class="btn" onclick="appendValue('1')">1</button>
+                <button class="btn" onclick="appendValue('2')">2</button>
+                <button class="btn" onclick="appendValue('3')">3</button>
+
+                <button class="btn clear" onclick="clearDisplay()">C</button>
+                <button class="btn" onclick="appendValue('0')">0</button>
+                <button class="btn process" onclick="processMoney()">=</button>
+            </div>
         </div>
-        
-        <div class="denominations">
-            <h3>Pecahan Uang (Rp)</h3>
-            <button class="btn denom" onclick="addDenomination(100000)">100.000</button>
-            <button class="btn denom" onclick="addDenomination(50000)">50.000</button>
-            <button class="btn denom" onclick="addDenomination(20000)">20.000</button>
-            <button class="btn denom" onclick="addDenomination(10000)">10.000</button>
-            <button class="btn denom" onclick="addDenomination(5000)">5.000</button>
-            <button class="btn denom" onclick="addDenomination(2000)">2.000</button>
-            <button class="btn denom" onclick="addDenomination(1000)">1.000</button>
-            <button class="btn denom" onclick="addDenomination(500)">500</button>
-            <button class="btn denom" onclick="addDenomination(200)">200</button>
-            <button class="btn denom" onclick="addDenomination(100)">100</button>
+
+        <div class="result-box">
+            <h3 align="center">Hasil Pecahan Uang</h3>
+            <pre id="result-output">Belum ada hasil...</pre>
         </div>
-    </div>
+    </div>  
 
     <script src="script.js"></script>
 </body>
